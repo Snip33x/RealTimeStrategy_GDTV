@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class RTSNetworkManager : NetworkManager
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private GameObject unitSpawnerPrefab = null;
 
-    // Update is called once per frame
-    void Update()
+    public override void OnServerAddPlayer(NetworkConnection conn)
     {
-        
+        base.OnServerAddPlayer(conn);
+
+        GameObject unitSpawnerInstance = Instantiate(
+            unitSpawnerPrefab,
+            conn.identity.transform.position,
+            conn.identity.transform.rotation);
+
+        NetworkServer.Spawn(unitSpawnerInstance, conn);
     }
 }
