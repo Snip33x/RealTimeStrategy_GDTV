@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class UnitSelectionHandler : MonoBehaviour
 {
     [SerializeField] private LayerMask layerMask = new LayerMask();
+
     private Camera mainCamera;
 
     private List<Unit> selectedUnits = new List<Unit>();
@@ -18,16 +19,16 @@ public class UnitSelectionHandler : MonoBehaviour
 
     private void Update()
     {
-        if(Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
-            //foreach (Unit selectedUnit in selectedUnits)
-            //{
-            //    selectedUnit.Deselect();
-            //}
+            foreach (Unit selectedUnit in selectedUnits)
+            {
+                selectedUnit.Deselect();
+            }
 
-            //selectedUnits.Clear();
+            selectedUnits.Clear();
         }
-        else if(Mouse.current.leftButton.wasReleasedThisFrame)
+        else if (Mouse.current.leftButton.wasReleasedThisFrame)
         {
             ClearSelectionArea();
         }
@@ -37,15 +38,15 @@ public class UnitSelectionHandler : MonoBehaviour
     {
         Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
 
-        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask)) { return; } //we hit something with our click
+        if (!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, layerMask)) { return; }
 
-        if(!hit.collider.TryGetComponent<Unit>(out Unit unit)) { return; } //the thing we hit is a unit
+        if (!hit.collider.TryGetComponent<Unit>(out Unit unit)) { return; }
 
-        if(!unit.hasAuthority) { return; } //and unit belongs to client
+        if (!unit.hasAuthority) { return; }
 
         selectedUnits.Add(unit);
 
-        foreach(Unit selectedUnit in selectedUnits)
+        foreach (Unit selectedUnit in selectedUnits)
         {
             selectedUnit.Select();
         }
