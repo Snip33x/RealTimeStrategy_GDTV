@@ -9,12 +9,11 @@ public class UnitMovement : NetworkBehaviour
 {
     [SerializeField] private NavMeshAgent agent = null;
 
-    private Camera mainCamera;
 
     #region Server
 
     [Command]
-    private void CmdMove(Vector3 position)
+    public void CmdMove(Vector3 position)
     {
         if(!NavMesh.SamplePosition(position, out NavMeshHit hit, 1f , NavMesh.AllAreas)) { return; }
 
@@ -23,27 +22,27 @@ public class UnitMovement : NetworkBehaviour
 
     #endregion
 
-    #region Client
+    //#region Client
 
-    public override void OnStartAuthority()
-    {
-        mainCamera = Camera.main;
-        base.OnStartAuthority();
-    }
+    //public override void OnStartAuthority()
+    //{
+    //    mainCamera = Camera.main;
+    //    base.OnStartAuthority();
+    //}
 
-    [ClientCallback]
-    private void Update()
-    {
-        if(!hasAuthority) { return; }
+    //[ClientCallback]
+    //private void Update()
+    //{
+    //    if(!hasAuthority) { return; }
 
-        if(!Mouse.current.rightButton.wasPressedThisFrame) { return; }
+    //    if(!Mouse.current.rightButton.wasPressedThisFrame) { return; }
 
-        Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()); //grab where the cursor is
+    //    Ray ray = mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue()); //grab where the cursor is
 
-        if(!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity)) { return; }
+    //    if(!Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity)) { return; }
 
-        CmdMove(hit.point);
-    }
+    //    CmdMove(hit.point);
+    //}
 
-    #endregion
+    //#endregion
 }
