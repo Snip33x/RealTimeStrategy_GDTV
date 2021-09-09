@@ -16,6 +16,6 @@ public class RTSNetworkManager : NetworkManager
             conn.identity.transform.position,
             conn.identity.transform.rotation);
 
-        NetworkServer.Spawn(unitSpawnerInstance, conn);
+        NetworkServer.Spawn(unitSpawnerInstance, conn); //test
     }
 }
