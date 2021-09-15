@@ -82,6 +82,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &4344859321042516756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3979850823904046420}
+  m_Layer: 0
+  m_Name: AimAtPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3979850823904046420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344859321042516756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.4879999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3171578064200900294}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7064185054546552268
 GameObject:
   m_ObjectHideFlags: 0
@@ -97,6 +127,7 @@ GameObject:
   - component: {fileID: -4374975036709187823}
   - component: {fileID: 4091578339495517798}
   - component: {fileID: 303985834455176086}
+  - component: {fileID: 7911483723493014945}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -117,6 +148,7 @@ Transform:
   m_Children:
   - {fileID: 2895436046194740549}
   - {fileID: 8312877053011532261}
+  - {fileID: 3979850823904046420}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -261,6 +293,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.8069885, y: 1.9823186, z: 3.020893}
   m_Center: {x: -0.052036643, y: 1.3969806, z: 0.08722448}
+--- !u!114 &7911483723493014945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7064185054546552268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd36e2195d35b14790f11937d7903e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimAtPoint: {fileID: 3979850823904046420}
 --- !u!1001 &3432902639735663278
 PrefabInstance:
   m_ObjectHideFlags: 0
