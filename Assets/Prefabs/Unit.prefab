@@ -179,7 +179,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7064185054546552268}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1.63
+  m_Radius: 1.52
   m_Speed: 4
   m_Acceleration: 6
   avoidancePriority: 50
@@ -208,6 +208,7 @@ MonoBehaviour:
   syncInterval: 0.1
   agent: {fileID: 7163955043336389839}
   targeter: {fileID: 2936304871027921005}
+  chaseRange: 10
 --- !u!114 &-4374975036709187823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,8 +295,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.8069885, y: 1.9823186, z: 3.020893}
-  m_Center: {x: -0.052036643, y: 1.3969806, z: 0.08722448}
+  m_Size: {x: 3.0396152, y: 2.3880436, z: 3.4956803}
+  m_Center: {x: -0.06930065, y: 1.5998431, z: 0.16653943}
 --- !u!114 &7911483723493014945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +326,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  target: {fileID: 0}
 --- !u!1001 &3432902639735663278
 PrefabInstance:
   m_ObjectHideFlags: 0

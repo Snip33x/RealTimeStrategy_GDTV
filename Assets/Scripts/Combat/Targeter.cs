@@ -5,9 +5,13 @@ using UnityEngine;
 
 public class Targeter : NetworkBehaviour
 {
-    [SerializeField] private Targetable target;
+    private Targetable target;
 
-    #region Server
+    public Targetable GetTarget()
+    {
+        return target;
+    }
+
     [Command]
     public void CmdSetTarget(GameObject targetGameObject)
     {
@@ -21,11 +25,4 @@ public class Targeter : NetworkBehaviour
     {
         target = null;
     }    
-
-    #endregion
-
-    #region Client
-
-    #endregion
-
 }
