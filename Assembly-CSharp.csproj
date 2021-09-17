@@ -62,6 +62,8 @@
     <Compile Include="Assets\Scripts\Buildings\UnitSpawner.cs" />
     <Compile Include="Assets\Scripts\Units\UnitSelectionHandler.cs" />
     <Compile Include="Assets\Scripts\Units\UnitMovement.cs" />
+    <Compile Include="Assets\Scripts\Units\UnitFiring.cs" />
+    <Compile Include="Assets\Scripts\Units\UnitProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
