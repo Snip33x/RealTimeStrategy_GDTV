@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Units\UnitMovement.cs" />
     <Compile Include="Assets\Scripts\Units\UnitFiring.cs" />
     <Compile Include="Assets\Scripts\Combat\Health.cs" />
+    <Compile Include="Assets\Scripts\Combat\HealthDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
